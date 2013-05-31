@@ -55,7 +55,6 @@ void sumFiboNums(int lessThan)
 { 
     int i = 2;
     int n = fibonacci(i);
-    printf("%d\n", n);
     
     while (n < lessThan) { // while Fibonacci number < 'lessThan'
         i++;
