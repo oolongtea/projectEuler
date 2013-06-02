@@ -19,7 +19,18 @@ int main(int argc, char **argv)
     num = temp;
     int sizeArray = sizeof(int) * num;
     int *array = (int *) malloc(sizeArray);
-    memset(array, 1, sizeArray);
+    //memset(array, 1, sizeArray);
+    printf("size array: %d\n", sizeof(array));
+
+    int i;
+    for (i = 0; i < num; i++) {
+        array[i] = 1;
+        printf("array[%d] = %d\n", i, array[i]);
+    }
+
+    printf("b4 sieve\n");
+    sieveOfEratosthenes(array);
+    printf("after sieve\n");
 
     int s = 0;
     while (s < num) {
@@ -27,11 +38,6 @@ int main(int argc, char **argv)
         if (s % 5 == 0) {printf("\n");}
         s++;
     }
-
-    printf("b4 sieve\n");
-    sieveOfEratosthenes(array);
-    printf("after sieve\n");
-
     
 /*    
     while (s < num) {
@@ -53,9 +59,12 @@ void sieveOfEratosthenes(int *array)
 {
     int i, j, k = 0;
     for (i = 0; i < sqrt(num); i++) {
+        printf("inside for\n");
         if (array[i] == 1) {
-            k = 0;
-            for (j = pow(i, 2); j < num; j += (k*i)) {
+            printf("inside if\n");
+            for (j = pow(i, 2); j < num; j += (i*i)) {
+                //printf("inside second for\n");
+                printf("j: %d\n", j);
                 array[j] = 0;
                 k++;
             }
