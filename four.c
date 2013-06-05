@@ -19,15 +19,21 @@ int main(int argc, char **argv)
         printf("EXAMPLE: %s 2\t\n", argv[0]);
     }
 
-    int num = atoi(argv[1]);
+    int digits = atoi(argv[1]);
 
+    int i, j = 0;
+    for (i = 1; numOfDigits(i) < (digits+1); i++) {
+    for (j = 1; numOfDigits(j) < (digits+1); j++) {
+    int num = i * j;
     char *str = int2str(num);
     char *rev = revStr(str);
-    printf("num: %d\tstr: %s\trev: %s\n", num, str, rev);
-
-    printf("palindrome: %d\n", isPalindrome(str, rev));
+    if (isPalindrome(str, rev) == 0) {printf("%d * %d = %d\n",i,j,num);}
+    //printf("num: %d\tstr: %s\trev: %s\n", num, str, rev);
+    //printf("palindrome: %d\n", isPalindrome(str, rev));
     free(rev);
     free(str); 
+    }
+    }
     return 0;
 }
 
@@ -38,11 +44,12 @@ int numOfDigits(int num)
 
 char *int2str(int num)
 {
+    //printf("numdig: %d\n", numOfDigits(num));
     int size = numOfDigits(num) + 1;
     char *str = (char *) malloc(size);
-    memset(str, 0, size);
+    memset(str, 0, size-1);
     sprintf(str, "%d", num);
-    printf("%s\n", str);
+    //printf("%s\n", str);
     return str;
 }
 
