@@ -12,15 +12,17 @@ CXXFLAGS = -g -Wall $(INCLUDES)
 LDFLAGS = -g
 LDLIBS = -lm
 
+DEFAULTS = one two three four
+
 .PHONY: default
-default: one two three
+default: $(DEFAULTS)
 
 # header dependency
 # (none)
 
 .PHONY: clean
 clean:
-	rm -f *.o *~ a.out core one two three
+	rm -f *.o *~ a.out core $(DEFAULTS)
 
 .PHONY: all
 all: clean default

@@ -6,7 +6,7 @@
 int numOfDigits(int num);
 char *int2str(int num);
 char *revStr(char *num);
-int isPalindrome(int num);
+int isPalindrome(char *str1, char *str2);
 
 
 int main(int argc, char **argv)
@@ -25,6 +25,7 @@ int main(int argc, char **argv)
     char *rev = revStr(str);
     printf("num: %d\tstr: %s\trev: %s\n", num, str, rev);
 
+    printf("palindrome: %d\n", isPalindrome(str, rev));
     free(rev);
     free(str); 
     return 0;
@@ -45,6 +46,7 @@ char *int2str(int num)
     return str;
 }
 
+// reverses string with XOR
 char *revStr(char *num)
 {
     int size = strlen(num) + 1;
@@ -65,9 +67,9 @@ char *revStr(char *num)
     return rev;
 }
 
-/*
-int isPalindrome(char *num);
+
+int isPalindrome(char *str1, char *str2)
 {
-    
+    return strcmp(str1, str2);
 }
-*/
+

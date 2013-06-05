@@ -55,7 +55,7 @@ int main(int argc, char **argv)
 /* method extracted from wikipedia page */
 void sieveOfEratosthenes(char *array)
 {
-    long int i, j, k = 0;
+    long int i, j = 0;
     for (i = 2; i < sqrt(num); i++) {
         if (array[i] == '1') {
             j = pow(i, 2);
