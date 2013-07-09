@@ -1,5 +1,7 @@
 /*
   Find sum of multiples of two numbers that are less than a number.
+
+  Project Euler #1
 */
 
 #include <stdio.h> // printf()
