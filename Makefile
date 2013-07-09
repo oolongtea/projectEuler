@@ -12,7 +12,7 @@ CXXFLAGS = -g -Wall $(INCLUDES)
 LDFLAGS = -g
 LDLIBS = -lm
 
-DEFAULTS = one two three four five six
+DEFAULTS = one two three four five six seven
 
 .PHONY: default
 default: $(DEFAULTS)

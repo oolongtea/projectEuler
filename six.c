@@ -8,6 +8,13 @@ int sumSqrs;
 
 int main(int argc, char **argv)
 {
+    if (argc != 2) {
+        printf("Gives difference between the sum of the squares of the\n");
+        printf("first N natural numbers and the square of the sum\n\n");
+        printf("USAGE: %s <N>\n", argv[0]);
+        return 1;
+    }
+
     int num = atoi(argv[1]);
 
     int sum = sumNumbers(num);
@@ -15,7 +22,7 @@ int main(int argc, char **argv)
 
     sumOfSqrs(num);
 
-    printf("sln: %d\n", sqrSum - sumSqrs);   
+    printf("%d\n", sqrSum - sumSqrs);   
 
     return 0;
 }
