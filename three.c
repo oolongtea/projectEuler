@@ -1,4 +1,6 @@
-/* Prints Prime Factors of a Number */
+/* 
+ * Prints Largest Prime Factor of a Number 
+ */
 
 #include <stdio.h> // printf()
 #include <stdlib.h> // atol()
@@ -10,10 +12,21 @@ void sieveOfEratosthenes(char *);
 /* Tests if it's a factor of given number */
 int isFactor(long int);
 
-static long int num;
+static long int num; 
 
 int main(int argc, char **argv)
 {
+    // check for correct usage
+    if (argc != 2) {
+        printf("\tUSAGE ERROR\n"
+               "USAGE: %s <desiredNumber>\n"
+               "\n\tEXAMPLE\n"
+               "> Problem 3: Find the largest prime factor of\n> "
+               "the number 600851475143.\n"
+               "COMMAND: %s 600851475143\n"
+               "yields answer of 6857\n",  argv[0], argv[0]);
+        return 1;
+    }
     // check for correct usage
     if (argc != 2) {
         printf("USAGE: %s <desiredNum>\n", argv[0]);
@@ -41,12 +54,16 @@ int main(int argc, char **argv)
     // fill array with prime numbers below sqrt(num)
     sieveOfEratosthenes(array);
 
-    // print numbers that are prime and factor of desired number
+    long int largestPrimeFactor;
+    // find number that is prime and factor of desired number
     for (i = 2; i < sqrt(num); i++) {
         if (array[i] == '1' && isFactor(i) == 1) {
-            printf("%ld\n", i);
+            largestPrimeFactor = (long int) i;
         }
     }
+
+    // print result
+    printf("%ld\n", largestPrimeFactor);
 
     free(array); // free allocated memory
     return 0;
