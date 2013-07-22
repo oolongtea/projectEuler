@@ -27,12 +27,6 @@ int main(int argc, char **argv)
                "yields answer of 6857\n",  argv[0], argv[0]);
         return 1;
     }
-    // check for correct usage
-    if (argc != 2) {
-        printf("USAGE: %s <desiredNum>\n", argv[0]);
-        printf("EXAMPLE: %s 405\n", argv[0]);
-        return -1;
-    }
     
     // store argument as long int
     long int temp = atol(argv[1]);
