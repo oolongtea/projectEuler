@@ -1,4 +1,9 @@
-/* Find sum of Fibonacci numbers below a specified number */
+/* 
+ * Find sum of Fibonacci numbers below a specified number 
+ *
+ * Project Euler #2
+ */
+
 
 #include <stdio.h> // printf()
 #include <stdlib.h> // atoi()
@@ -14,10 +19,15 @@ static int sum;
 
 int main(int argc, char **argv)
 {
-    /* test for correct usage */
+    // check for correct usage
     if (argc != 2) {
-        printf("USAGE: %s <maxFibonacciNumber>\n", argv[0]);
-        printf("EXAMPLE: %s 1000\n", argv[0]);
+        printf("\tUSAGE ERROR\n"
+               "USAGE: %s <maxFibonacciNumber>\n"
+               "\n\tEXAMPLE\n"
+               "> Problem 2: Find the sum of the even-valued terms\n> whose"
+               " values don't exceed four million.\n"
+               "COMMAND: %s 4000000\n"
+               "yields answer of 4613732\n",  argv[0], argv[0]);
         return 1;
     }
 
