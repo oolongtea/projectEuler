@@ -21,9 +21,9 @@ int main (int argc, char **argv)
         printf("\tUSAGE ERROR\n"
                "USAGE: %s <multiple> <multiple> <lessThan>\n"
                "\n\tEXAMPLE\n"
-               "Problem 1: Find the sum of all the multiples of"
-               "3 or 5 below 1000.\n"
-               "COMMAND: %s 3 5 100\n"
+               "> Problem 1: Find the sum of all the multiples of"
+               " 3 or 5 below 1000.\n"
+               "COMMAND: %s 3 5 1000\n"
                "yields answer of 233168\n",  argv[0], argv[0]);
         return 1;
     }
@@ -37,8 +37,7 @@ int main (int argc, char **argv)
     findSumOfMultiples(multiple1, multiple2, lessThan);
     
     //print result
-    printf("sum of multiples of %d and %d below %d is %d\n",
-                multiple1, multiple2, lessThan, sumOfMultiples); 
+    printf("%d\n", sumOfMultiples); 
 
     return 0;
 }
